@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/SearchBar.css';
 
 class SearchBar extends React.Component {
 
@@ -25,7 +26,7 @@ class SearchBar extends React.Component {
         className='search-bar'
         onSubmit={(e) => {this.props.handleSubmit(e, this.state.searchType, this.state.searchInput)}}
         >
-        <label htmlFor='search-type'>
+        <label htmlFor='search-type' className='label'>
           I'm looking for a 
         </label>
         <select 
@@ -38,16 +39,18 @@ class SearchBar extends React.Component {
           <option value='vehicles'>vehicle</option>
           <option value='films'>film</option>
         </select>
-        <label htmlFor='search-input'> called
+        <label htmlFor='search-input' className='label'> called
           <input 
             id='search-input' 
             type='text' 
             placeholder='Skywalker' 
-            required
             onChange={(e) => this.updateSearchInput(e.target.value)}
             />
         </label>
-        <button type='submit'>Search</button>
+        <div className='spelling-help'>
+          If you're not sure how to spell it, just type in the first few letters!
+        </div>
+        <button type='submit' id='subBtn'>Search</button>
       </form>
     )
   }

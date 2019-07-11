@@ -1,9 +1,10 @@
 import React from 'react';
+import '../styles/Footer.css';
 
 function Footer() {
   return(
     <div className='footer'>
-    Thinkful Engineering Immersion 2019
+    Whitney Wallace 2019
     </div>
   )
 }

@@ -1,0 +1,18 @@
+.random-saying {
+  font-size: 30px;
+  color: white;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.matching-results {
+  text-align: left;
+  color: white;
+  margin-left: 35px;
+}
+
+.loading, .error, .no-results {
+  color: white;
+  font-size: 40px;
+  margin-top: 50px;
+}

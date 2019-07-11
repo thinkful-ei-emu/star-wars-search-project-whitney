@@ -1,5 +1,6 @@
 import React from 'react';
 import ResultCards from './ResultCards';
+import '../styles/Results.css';
 
 class Results extends React.Component {
 
@@ -25,21 +26,21 @@ class Results extends React.Component {
     const randomSaying = randomSayings[Math.floor(Math.random() * randomSayings.length)];
 
     const results = (
-      <div>
-      <h2>
+      <div className='results'>
+      <h2 className='random-saying'>
           {randomSaying}
         </h2>
-        <div>
+        <div className='matching-results'>
           Matching Results: {this.props.results.count}
         </div>
         <ResultCards searchType={this.props.searchType} results = {this.props.results}/>
         </div>
     )
     return(
-      <div className='results'>
-      {this.props.isLoading ? "Loading..." : 
-      (this.props.hasError) ? `Oops! There was an error... Please try again later.` :
-      (this.props.results.count === 0) ? `These aren't the droids you're looking for...  No matches found.` :
+      <div className='results-container'>
+      {this.props.isLoading ? <div className='loading'>Loading...</div> : 
+      (this.props.hasError) ? <div className='error'>Oops! There was an error... Please try again later.</div> :
+      (this.props.results.count === 0) ? <div className='no-results'>These aren't the droids you're looking for...  No matches found.</div> :
       (this.props.searchCompleted) ? results : ''}
       </div>
     )

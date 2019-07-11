@@ -1,0 +1,31 @@
+
+.search-bar {
+  color: white;
+  font-size: 20px;
+}
+
+.spelling-help {
+  font-size: 10px;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+#search-type, #search-input {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#search-input {
+  cursor: text;
+}
+
+#subBtn, #search-type {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#subBtn {
+  border-radius: 3px;
+}

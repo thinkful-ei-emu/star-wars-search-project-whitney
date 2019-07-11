@@ -58,7 +58,7 @@ class ResultCards extends React.Component {
   render() {
     
     return (
-      <div>
+      <div className='result-cards-container'>
         {this.resultCard()}
       </div>
     )

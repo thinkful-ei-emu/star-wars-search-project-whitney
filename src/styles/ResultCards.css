@@ -1,0 +1,35 @@
+.result-card {
+  background-color: white;
+  margin: 30px;
+  width: 250px;
+  border-radius: 12px;
+}
+
+.result-card ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.result-card li {
+  margin-bottom: 3px;
+}
+
+.result-cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Media Queries */
+
+
+@media only screen and (min-width: 620px) {
+  .result-cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

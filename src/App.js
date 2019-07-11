@@ -77,20 +77,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <SearchBar 
-          // updateSearchInput={this.updateSearchInput} 
-          // updateSearchType={this.updateSearchType}
-          handleSubmit={this.handleSubmit}
-          />
-        <Results 
-          searchType={this.state.searchType} 
-          results={this.state.results} 
-          hasError={this.state.hasError} 
-          isLoading={this.state.isLoading}
-          searchCompleted={this.state.searchCompleted}/>
-        <Footer />
+      <div className='app-container'>
+        <div className="App">
+          <Header />
+          <SearchBar 
+            handleSubmit={this.handleSubmit}
+            />
+          <Results 
+            searchType={this.state.searchType} 
+            results={this.state.results} 
+            hasError={this.state.hasError} 
+            isLoading={this.state.isLoading}
+            searchCompleted={this.state.searchCompleted}/>
+          <Footer />
+        </div>
       </div>
     );
   } 

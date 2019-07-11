@@ -1,12 +1,13 @@
 import React from 'react';
 import cuid from 'cuid';
+import '../styles/ResultCards.css';
 
 class FilmResultCard extends React.Component {
 
   render() {
     return(
       this.props.results.results.map(result => (
-        <div key={cuid()}>
+        <div key={cuid()} className='result-card'>
           <h2> {result.title} </h2>
           <ul>
             <li key={cuid()}>Episode: {result.episode_id}</li>
