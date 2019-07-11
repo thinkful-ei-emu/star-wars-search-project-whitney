@@ -6,7 +6,7 @@ class PlanetResultCard extends React.Component {
   render() {
     return(
       this.props.results.results.map(result => (
-        <div>
+        <div key={cuid()}>
           <h2>{result.name}</h2>
           <ul>
             <li key={cuid()}>Rotation Period: {result.rotation_period} hours</li>

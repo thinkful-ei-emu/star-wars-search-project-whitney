@@ -6,7 +6,7 @@ class SpeciesResultCard extends React.Component {
   render() {
     return(
       this.props.results.results.map(result => (
-        <div>
+        <div key={cuid()}>
           <h2>{result.name}</h2>
           <ul>
             <li key={cuid()}>Classification: {result.classification}</li>

@@ -1,5 +1,4 @@
 import React from 'react';
-import cuid from 'cuid';
 import VehicleResultCard from './VehicleResultCard';
 import StarshipResultCard from './StarshipResultCard';
 import SpeciesResultCard from './SpeciesResultCard';
@@ -17,8 +16,8 @@ class ResultCards extends React.Component {
   resultCard = () => {
     
     const type = this.props.searchType
-    console.log(this.props.results);
-    console.log(type);
+    //console.log(this.props.results);
+    //console.log(type);
     
     if(!this.props.results.results) {
       return (<p>THESE AREN'T THE DROIDS YOU'RE LOOKING FOR...</p>)
@@ -48,7 +47,7 @@ class ResultCards extends React.Component {
         <StarshipResultCard numberWithCommas={this.numberWithCommas} results={this.props.results}/>
       )
     } else
-    if(type === 'vehciles') {
+    if(type === 'vehicles') {
       return(
         <VehicleResultCard numberWithCommas={this.numberWithCommas} results={this.props.results}/>
       )
