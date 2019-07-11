@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultCard from './ResultCard';
+import ResultCards from './ResultCards';
 
 class Results extends React.Component {
 
@@ -10,7 +10,10 @@ class Results extends React.Component {
         <h2>
           {randomSaying}
         </h2>
-        <ResultCard />
+        <div>
+          Matching Results: {this.props.results.count}
+        </div>
+        <ResultCards searchType={this.props.searchType} results = {this.props.results}/>
       </div>
     )
   }
