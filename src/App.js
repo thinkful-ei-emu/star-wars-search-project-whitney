@@ -11,7 +11,6 @@ class App extends React.Component {
     isLoading: false,
     error: null,
     hasError: false,
-    //searchInput: '',
     searchType: 'people',
     searchCompleted: false,
     results: {}
@@ -50,12 +49,6 @@ class App extends React.Component {
       })
   }
 
-  // updateSearchInput = (userInput) => {
-  //   this.setState({
-  //     searchInput: userInput
-  //   })
-  // }
-
   updateSearchType = (userInput) => {
     this.setState({
       searchType: userInput,
@@ -75,6 +68,33 @@ class App extends React.Component {
     }) 
   }
 
+  handleLoadMore = (url) => {
+    this.setState({
+      isLoading: true,
+      error: null,
+    })
+    fetch(url)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error(res.statusText)
+      })
+      .then(resJson => {
+        this.setState({
+          isLoading: false,
+          results: resJson
+        })
+      })
+      .catch(error => {
+        this.setState({
+          error: error.message,
+          hasError: true,
+          isLoading: false,
+        })
+      })
+  }
+
   render() {
     return (
       <div className='app-container'>
@@ -88,7 +108,9 @@ class App extends React.Component {
             results={this.state.results} 
             hasError={this.state.hasError} 
             isLoading={this.state.isLoading}
-            searchCompleted={this.state.searchCompleted}/>
+            searchCompleted={this.state.searchCompleted}
+            handleLoadMore={this.handleLoadMore}
+            />
           <Footer />
         </div>
       </div>

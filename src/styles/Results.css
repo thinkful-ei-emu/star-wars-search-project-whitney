@@ -16,3 +16,15 @@
   font-size: 40px;
   margin-top: 50px;
 }
+
+.results-container {
+  margin-bottom: 30px;
+}
+
+.nav-button {
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 15px;
+  width: 80px;
+}

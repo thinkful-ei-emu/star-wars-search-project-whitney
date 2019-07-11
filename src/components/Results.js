@@ -36,15 +36,22 @@ class Results extends React.Component {
         <ResultCards searchType={this.props.searchType} results = {this.props.results}/>
         </div>
     )
+
+    
     return(
       <div className='results-container'>
       {this.props.isLoading ? <div className='loading'>Loading...</div> : 
       (this.props.hasError) ? <div className='error'>Oops! There was an error... Please try again later.</div> :
       (this.props.results.count === 0) ? <div className='no-results'>These aren't the droids you're looking for...  No matches found.</div> :
       (this.props.searchCompleted) ? results : ''}
+      <div className='button-div'>
+        {this.props.results.previous ? <button className='nav-button' onClick={() => this.props.handleLoadMore(this.props.results.previous)}>Previous</button> : ''}
+        {this.props.results.next ? <button className='nav-button' onClick={() => this.props.handleLoadMore(this.props.results.next)}>Next</button> : ''}
+      </div>
       </div>
     )
   }
 }
 
 export default Results
+
